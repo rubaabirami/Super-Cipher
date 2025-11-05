@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Global Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: black;
+            color: #00ff00; /* Neon green color */
+            overflow: hidden;
+        }
+
+        /* Matrix Animation */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.pinimg.com/originals/62/da/61/62da615e1c6e29ab501928aba4a20b5b.gif'); /* Replace with your image URL */
+            background-size: cover; /* Ensures the image covers the entire area */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents tiling */
+            height: 100vh; /* Ensures the background spans the full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: bottom;
+            align-items: center;
+            color: white; /* Adjust text color for readability */
+            text-align: centers;
+        }
+
+        /* Login Container */
+        .login-container {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Title Styling */
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #00ff00;
+            text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+        }
+
+        /* Error Message */
+        .login-container p {
+            color: #ff4d4d;
+            margin-bottom: 10px;
+        }
+
+        /* Form Styling */
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Label Styling */
+        .login-container label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Input Styling */
+        .login-container input {
+            background: black;
+            border: 1px solid #00ff00;
+            color: #00ff00;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-shadow: 0 0 5px #00ff00;
+        }
+
+        /* Button Styling */
+        .login-container button {
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            background: linear-gradient(90deg, #00ff00, #004d00);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 0 5px #00ff00, 0 0 15px #00ff00;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .login-container button:hover {
+            background: linear-gradient(90deg, #004d00, #00ff00);
+            transform: translateY(-3px);
+        }
+
+        .login-container button:active {
+            transform: translateY(1px);
+        }
+
+        /* Footer Text */
+        .login-container .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #00ff00;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 20px;
+            }
+
+            .login-container h1 {
+                font-size: 24px;
+            }
+
+            .login-container button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>System Login</h1>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="footer">Unauthorized access is prohibited!</div>
+    </div>
+</body>
+</html>
